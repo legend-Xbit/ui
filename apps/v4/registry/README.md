@@ -16,7 +16,8 @@ the installable output under `public/r/`.
 - **`new-york-v4/`** — the legacy source registry. Unlike the generated
   combinations below, its `registry.ts` and component files are authored
   directly and committed.
-- **`../examples/base`, `../examples/radix`** — authored component demos. See
+- **`../examples/base`, `../examples/radix`, `../examples/aria`** — authored
+  component demos, grouped by component folder. See
   [`../examples/README.md`](../examples/README.md).
 
 ## Generated output (do not edit by hand)

@@ -30,7 +30,9 @@ import { STYLES } from "@/registry/styles"
  * Source of truth:
  * - Authored raw component/registry source lives in registry/bases/base and
  *   registry/bases/radix.
- * - Authored demo source lives in examples/base and examples/radix.
+ * - Authored demo source lives in examples/base, examples/radix, and
+ *   examples/aria, grouped by component folder. Public example names are the
+ *   file basename (docs keep using name="button-demo").
  * - Style tokens live in registry/styles/style-*.css.
  *
  * Persistent outputs:
@@ -1173,8 +1175,20 @@ export const ExamplesIndex: Record<string, Record<string, any>> = {`
   "${baseName}": {`
     const shard: ComponentShard = { key: baseName, entries: "", names: [] }
 
+    const seenNames = new Set<string>()
+
     for (const file of files) {
-      const name = file.replace(/\.tsx$/, "")
+      // Public example names stay filename-based so docs can keep using
+      // <ComponentPreview name="button-demo" /> after files move into
+      // component folders like examples/base/button/button-demo.tsx.
+      const name = path.posix.basename(file).replace(/\.tsx$/, "")
+
+      if (seenNames.has(name)) {
+        throw new Error(
+          `Duplicate example name "${name}" in examples/${baseName} (${file})`
+        )
+      }
+      seenNames.add(name)
 
       index += `
     "${name}": {
@@ -1218,6 +1232,10 @@ async function collectExampleFiles(
       const entryPath = path.join(dirPath, entry.name)
 
       if (entry.isDirectory()) {
+        if (entry.name.startsWith("__") || entry.name.startsWith(".")) {
+          return []
+        }
+
         return collectExampleFiles(entryPath, rootDir)
       }
 
