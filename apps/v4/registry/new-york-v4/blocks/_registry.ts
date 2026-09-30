@@ -89,6 +89,81 @@ export const blocks: Registry["items"] = [
     },
   },
   {
+    name: "dashboard-02",
+    type: "registry:block",
+    description:
+      "An analytics dashboard with a sticky summary header, KPI cards, an interactive trend chart and a recent activity table.",
+    dependencies: ["lucide-react", "recharts"],
+    registryDependencies: [
+      "alert",
+      "avatar",
+      "badge",
+      "button",
+      "card",
+      "chart",
+      "empty",
+      "progress",
+      "select",
+      "skeleton",
+      "spinner",
+      "table",
+      "tabs",
+      "toggle-group",
+      "tooltip",
+    ],
+    files: [
+      {
+        path: "blocks/dashboard-02/page.tsx",
+        type: "registry:page",
+        target: "app/dashboard/page.tsx",
+      },
+      {
+        path: "blocks/dashboard-02/components/analytics-provider.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "blocks/dashboard-02/components/dashboard-header.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "blocks/dashboard-02/components/kpi-cards.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "blocks/dashboard-02/components/trend-chart.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "blocks/dashboard-02/components/channel-breakdown.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "blocks/dashboard-02/components/activity-table.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "blocks/dashboard-02/components/section-state.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "blocks/dashboard-02/lib/types.ts",
+        type: "registry:lib",
+      },
+      {
+        path: "blocks/dashboard-02/lib/format.ts",
+        type: "registry:lib",
+      },
+      {
+        path: "blocks/dashboard-02/lib/data.ts",
+        type: "registry:lib",
+      },
+    ],
+    categories: ["dashboard"],
+    meta: {
+      iframeHeight: "1200px",
+    },
+  },
+  {
     name: "sidebar-01",
     type: "registry:block",
     description: "A simple sidebar with navigation grouped by section.",
