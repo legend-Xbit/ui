@@ -4,7 +4,9 @@
 # Usage:   docs/design-kh/rtl-harness/run.sh <workdir>
 # Needs:   `pnpm install && pnpm --filter shadcn build` already run at the repo root,
 #          Node 20+, and a Chromium (set CHROMIUM_PATH if not under /opt/pw-browsers).
-# Output:  <workdir>/results.txt and <workdir>/shots/*.png. Nothing in the repo is modified.
+# Output:  <workdir>/results.txt (mirror-results.txt with MIRROR_ONLY=1) and <workdir>/shots/*.png.
+#          Env: MIRROR_ONLY=1 runs only the gallery test; ONLY=a,b limits it to those components;
+#          VARIANTS=patched limits variants; SHOTS=1 saves gallery screenshots. Nothing in the repo is modified.
 set -euo pipefail
 
 HERE=$(cd "$(dirname "$0")" && pwd)
@@ -58,8 +60,12 @@ for port in 5171 5172 5173; do
 done
 
 {
-  echo "### icons (breadcrumb / pagination / calendar / dropdown-sub)"; node icons.mjs
-  echo; echo "### context-menu / menubar sub-trigger chevrons"; node menus.mjs
-  echo; echo "### sidebar toggle icon"; node toggle.mjs
-  echo; echo "### sheet / sidebar / carousel / navigation-menu"; node suite.mjs
-} | tee results.txt
+  if [ -z "${MIRROR_ONLY:-}" ]; then
+    echo "### icons (breadcrumb / pagination / calendar / dropdown-sub)"; node icons.mjs
+    echo; echo "### context-menu / menubar sub-trigger chevrons"; node menus.mjs
+    echo; echo "### sidebar toggle icon"; node toggle.mjs
+    echo; echo "### sheet / sidebar / carousel / navigation-menu"; node suite.mjs
+    echo
+  fi
+  echo "### mirror-symmetry test over the component gallery"; node mirror.mjs
+} | tee "${MIRROR_ONLY:+mirror-}results.txt"

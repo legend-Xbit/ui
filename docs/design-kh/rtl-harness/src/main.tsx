@@ -2,6 +2,7 @@ import React from "react"
 import { createRoot } from "react-dom/client"
 import { Direction } from "radix-ui"
 import "./index.css"
+import { GALLERY } from "./gallery"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -192,6 +193,12 @@ const scenarios: Record<string, React.ReactElement> = {
   carousel: <CarouselScenario />, menus: <MenusScenario />, nav: <NavScenario />,
 }
 
+const gallery = scenario.startsWith("g:") ? GALLERY[scenario.slice(2)] : undefined
+;(window as unknown as { __GALLERY__: string[] }).__GALLERY__ = Object.keys(GALLERY)
+if (gallery) document.body.style.overflow = "hidden"
+
 createRoot(document.getElementById("root")!).render(
-  <Direction.DirectionProvider dir={dir}>{scenarios[scenario]}</Direction.DirectionProvider>
+  <Direction.DirectionProvider dir={dir}>
+    {gallery ? <div className="w-full px-6 pt-6">{gallery}</div> : scenarios[scenario]}
+  </Direction.DirectionProvider>
 )
