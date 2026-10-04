@@ -3,7 +3,10 @@
 // Usage: node rtl-audit.mjs <dir>
 // Reports physical-direction Tailwind tokens that a logical/RTL migration should
 // have removed, plus directional icons that are not flipped. It does NOT render
-// anything, so treat results as candidates to verify in a browser.
+// anything, so treat results as CANDIDATES. The browser harness (rtl-harness/) is
+// the authority. Known false positives measured there: calendar chevrons (flipped
+// by CSS in classNames) and slide-* tokens in navigation-menu / sheet (those are
+// correct as they are).
 import fs from "node:fs"
 import path from "node:path"
 

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource/noto-sans-arabic/400.css";
+@import "@fontsource/noto-sans-arabic/600.css";
+@source "../variants";
+@custom-variant dark (&:is(.dark *));
+/*__THEME_TOKENS__*/
+@layer base { * { border-color: var(--border); } body { background: var(--background); color: var(--foreground); font-family: "Noto Sans Arabic", system-ui, sans-serif; } }
