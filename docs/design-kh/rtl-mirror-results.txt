@@ -1,0 +1,44 @@
+### mirror-symmetry test over the component gallery
+
+LTR regression (patched vs orig, root violations):
+  none across 37 components
+scenario         orig      migrated  patched   
+accordion        0         0         0         
+alert            0         0         0         
+alert-dialog     0         0         0         
+avatar           1         0         0         
+badge            0         0         0         
+button-group     0         0         0         
+button           0         0         0         
+card             0         0         0         
+checkbox         0         0         0         
+collapsible      0         0         0         
+command          1         0         0         
+dialog           1         0         0         
+drawer           0         0         0         
+empty            0         0         0         
+field            0         0         0         
+hover-card       0         0         0         
+input-group      2         0         0         
+input-otp        0         0         0         
+input            0         0         0         
+item             0         0         0         
+kbd              0         0         0         
+label            0         0         0         
+native-select    1         0         0         
+popover          0         0         0         
+progress         1         1         0         
+radio-group      0         0         0         
+resizable        0         0         0         
+scroll-area      0         0         0         
+select           1         0         0         
+slider           0         0         0         
+switch           1         0         0         
+table            0         0         0         
+tabs             0         0         0         
+textarea         0         0         0         
+toggle           0         0         0         
+toggle-group     0         0         0         
+tooltip          0         0         0         
+
+ROOT VIOLATIONS IN PATCHED (dx = offset from the mirrored position, px)
