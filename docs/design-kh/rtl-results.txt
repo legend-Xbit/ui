@@ -1,0 +1,89 @@
+### icons (breadcrumb / pagination / calendar / dropdown-sub)
+orig/ltr       breadcrumb:right@0  breadcrumb:right@0  pagination:left@0  pagination:right@0  calendar:left@0  calendar:right@0  dropdown-sub:right@0
+orig/rtl       breadcrumb:right@0  breadcrumb:right@0  pagination:left@0  pagination:right@0  calendar:left@180  calendar:right@180  dropdown-sub:right@0
+migrated/ltr   breadcrumb:right@0  breadcrumb:right@0  pagination:left@0  pagination:right@0  calendar:left@0  calendar:right@0  dropdown-sub:right@0
+migrated/rtl   breadcrumb:right@0  breadcrumb:right@0  pagination:left@0  pagination:right@0  calendar:left@180  calendar:right@180  dropdown-sub:right@0
+patched/ltr    breadcrumb:right@0  breadcrumb:right@0  pagination:left@0  pagination:right@0  calendar:left@0  calendar:right@0  dropdown-sub:right@0
+patched/rtl    breadcrumb:right@180  breadcrumb:right@180  pagination:left@180  pagination:right@180  calendar:left@180  calendar:right@180  dropdown-sub:right@180
+
+### context-menu / menubar sub-trigger chevrons
+orig/ltr       context-menu sub chevron:0°  menubar sub chevron:0°
+orig/rtl       context-menu sub chevron:0°  menubar sub chevron:0°
+migrated/ltr   context-menu sub chevron:0°  menubar sub chevron:0°
+migrated/rtl   context-menu sub chevron:0°  menubar sub chevron:0°
+patched/ltr    context-menu sub chevron:0°  menubar sub chevron:0°
+patched/rtl    context-menu sub chevron:180°  menubar sub chevron:180°
+
+### sidebar toggle icon
+orig/ltr       sidebar toggle icon:0°
+orig/rtl       sidebar toggle icon:0°
+migrated/ltr   sidebar toggle icon:0°
+migrated/rtl   sidebar toggle icon:0°
+patched/ltr    sidebar toggle icon:0°
+patched/rtl    sidebar toggle icon:180°
+
+### sheet / sidebar / carousel / navigation-menu
+
+## sheet side=right
+  orig/ltr      anchored:right enters-from:right
+  orig/rtl      anchored:right enters-from:right
+  migrated/ltr  anchored:right enters-from:right
+  migrated/rtl  anchored:left enters-from:right
+  patched/ltr   anchored:right enters-from:right
+  patched/rtl   anchored:right enters-from:right
+
+## sheet side=left
+  orig/ltr      anchored:left enters-from:left
+  orig/rtl      anchored:left enters-from:left
+  migrated/ltr  anchored:left enters-from:left
+  migrated/rtl  anchored:right enters-from:left
+  patched/ltr   anchored:left enters-from:left
+  patched/rtl   anchored:left enters-from:left
+
+## sidebar side=left
+  orig/ltr      anchored:left rail-off-edge:-1px
+  orig/rtl      anchored:left rail-off-edge:-1px
+  migrated/ltr  anchored:left rail-off-edge:-1px
+  migrated/rtl  anchored:right rail-off-edge:272px
+  patched/ltr   anchored:left rail-off-edge:-1px
+  patched/rtl   anchored:left rail-off-edge:-1px
+
+## sidebar side=right
+  orig/ltr      anchored:right rail-off-edge:1px
+  orig/rtl      anchored:right rail-off-edge:1px
+  migrated/ltr  anchored:right rail-off-edge:1px
+  migrated/rtl  anchored:left rail-off-edge:-240px
+  patched/ltr   anchored:right rail-off-edge:1px
+  patched/rtl   anchored:right rail-off-edge:1px
+
+## carousel H shift
+  orig/ltr      Next-click:←(-)  ArrowLeft:none  ArrowRight:←(-)
+  orig/rtl      Next-click:→(+)  ArrowLeft:none  ArrowRight:→(+)
+  migrated/ltr  Next-click:←(-)  ArrowLeft:none  ArrowRight:←(-)
+  migrated/rtl  Next-click:→(+)  ArrowLeft:none  ArrowRight:→(+)
+  patched/ltr   Next-click:←(-)  ArrowLeft:none  ArrowRight:←(-)
+  patched/rtl   Next-click:→(+)  ArrowLeft:→(+)  ArrowRight:none
+
+## carousel H arrows
+  orig/ltr      prev@left lucide-arrow-left:0°  next lucide-arrow-right:0°
+  orig/rtl      prev@left lucide-arrow-left:0°  next lucide-arrow-right:0°
+  migrated/ltr  prev@left lucide-arrow-left:0°  next lucide-arrow-right:0°
+  migrated/rtl  prev@right lucide-arrow-left:0°  next lucide-arrow-right:0°
+  patched/ltr   prev@left lucide-arrow-left:0°  next lucide-arrow-right:0°
+  patched/rtl   prev@right lucide-arrow-left:180°  next lucide-arrow-right:180°
+
+## carousel V arrows
+  orig/ltr      prev lucide-arrow-left:90°  next lucide-arrow-right:90°
+  orig/rtl      prev lucide-arrow-left:90°  next lucide-arrow-right:90°
+  migrated/ltr  prev lucide-arrow-left:90°  next lucide-arrow-right:90°
+  migrated/rtl  prev lucide-arrow-left:90°  next lucide-arrow-right:90°
+  patched/ltr   prev lucide-arrow-left:90°  next lucide-arrow-right:90°
+  patched/rtl   prev lucide-arrow-left:90°  next lucide-arrow-right:90°
+
+## navigation-menu
+  orig/ltr      motion=from-end  new item is right of previous item  content enters from right
+  orig/rtl      motion=from-start  new item is left of previous item  content enters from left
+  migrated/ltr  motion=from-end  new item is right of previous item  content enters from right
+  migrated/rtl  motion=from-start  new item is left of previous item  content enters from left
+  patched/ltr   motion=from-end  new item is right of previous item  content enters from right
+  patched/rtl   motion=from-start  new item is left of previous item  content enters from left
