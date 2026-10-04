@@ -60,6 +60,18 @@ const EDITS = [
     "logic",
   ],
 
+  // --- progress: the inline translateX(-N%) never follows direction ---------
+  // Upstream (bases/radix) has the same bug. Move the offset into a CSS variable
+  // and let two utilities pick the sign, so the bar fills from the inline start.
+  [
+    "progress.tsx",
+    `className="h-full w-full flex-1 bg-primary transition-all"
+        style={{ transform: \`translateX(-\${100 - (value || 0)}%)\` }}`,
+    `className="h-full w-full flex-1 -translate-x-(--progress-offset) bg-primary transition-all rtl:translate-x-(--progress-offset)"
+        style={{ "--progress-offset": \`\${100 - (value || 0)}%\` } as React.CSSProperties}`,
+    "logic",
+  ],
+
   // --- sheet: `side` is physical, keep position/border physical ------------
   ["sheet.tsx", '"inset-y-0 end-0 h-full w-3/4 border-s ', '"inset-y-0 right-0 h-full w-3/4 border-l ', "side"],
   ["sheet.tsx", '"inset-y-0 start-0 h-full w-3/4 border-e ', '"inset-y-0 left-0 h-full w-3/4 border-r ', "side"],

@@ -18,7 +18,7 @@ WORK=${1:?usage: run.sh <workdir>}
 
 mkdir -p "$WORK/src" "$WORK/shots"
 cp "$HERE"/index.html "$HERE"/vite.config.ts "$HERE"/package.json "$HERE"/*.mjs "$WORK/"
-cp "$HERE"/src/cn.ts "$HERE"/src/main.tsx "$WORK/src/"
+cp "$HERE"/src/cn.ts "$HERE"/src/main.tsx "$HERE"/src/gallery.tsx "$WORK/src/"
 
 # Theme tokens come straight from the app css so the harness uses the real palette.
 awk '/^@theme inline/{p=1} /^@layer base/{p=0} p' "$ROOT/apps/v4/app/globals.css" > "$WORK/theme-tokens.css"

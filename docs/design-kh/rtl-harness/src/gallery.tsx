@@ -149,7 +149,7 @@ export const GALLERY: Record<string, React.ReactElement> = {
     <Item variant="outline" className={W}><ItemMedia variant="icon"><Mail /></ItemMedia><ItemContent><ItemTitle>{A.a}</ItemTitle><ItemDescription>{A.d}</ItemDescription></ItemContent><ItemActions><Button size="sm">{A.f}</Button></ItemActions></Item>
   ),
   kbd: <KbdGroup><Kbd>⌘</Kbd><Kbd>K</Kbd></KbdGroup>,
-  label: <Label>{A.g}</Label>,
+  label: <div className={`${W} space-y-2`}><Label htmlFor="l1">{A.g}</Label><Input id="l1" defaultValue={A.a} /></div>,
   "native-select": (
     <NativeSelect className={W}><NativeSelectOption value="a">{A.a}</NativeSelectOption><NativeSelectOption value="b">{A.b}</NativeSelectOption></NativeSelect>
   ),
@@ -184,7 +184,7 @@ export const GALLERY: Record<string, React.ReactElement> = {
   tabs: (
     <Tabs defaultValue="a" className={W}><TabsList><TabsTrigger value="a">{A.a}</TabsTrigger><TabsTrigger value="b">{A.b}</TabsTrigger><TabsTrigger value="c">{A.c}</TabsTrigger></TabsList><TabsContent value="a">{A.d}</TabsContent></Tabs>
   ),
-  textarea: <Textarea className={W} defaultValue={A.d} />,
+  textarea: <div className={`${W} space-y-2`}><Textarea defaultValue={A.d} /><Button>{A.f}</Button></div>,
   toggle: <Toggle variant="outline"><Star />{A.a}</Toggle>,
   "toggle-group": (
     <ToggleGroup type="single" variant="outline" defaultValue="a"><ToggleGroupItem value="a">{A.a}</ToggleGroupItem><ToggleGroupItem value="b">{A.b}</ToggleGroupItem><ToggleGroupItem value="c">{A.c}</ToggleGroupItem></ToggleGroup>
